@@ -6,5 +6,5 @@
 
 int main(int arg, char* argvs[])
 {
-    fun(3);
+    
 }
