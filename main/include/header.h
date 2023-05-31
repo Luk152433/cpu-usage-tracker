@@ -10,4 +10,11 @@
 #include "reader.h"
 #include "thread.h"
 
+typedef struct coreSize
+{
+    int amountSign;
+    int coresNumber;
+}coreSize;
+
+
 #endif

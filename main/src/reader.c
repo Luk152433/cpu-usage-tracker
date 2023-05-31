@@ -18,10 +18,22 @@ Reader* readerOpenSourceFile(Reader* reader)
         return reader;
     }
 
-void    readerReadSourceFile(const Reader* reader,int amountSign, int coresNumber)
+char*    readerReadSourceFile(const Reader* reader,coreSize* coresize)
     {
-        char* const line=(char*)malloc(sizeof(char)*amountSign);
-        char* const allSign=(char*)malloc(sizeof(amountSign*(coresNumber+1)));
+        char* const line=(char*)malloc(sizeof(char)*(coresize->amountSign));
+        char* const allSign=(char*)malloc(sizeof((coresize->amountSign)*((coresize->coresNumber)+1)));
+        int countLoop=0;
+        while (countLoop<=(coresize->coresNumber))
+        {
+            fgets(line,coresize->amountSign,reader->f);
+
+            memcpy(allSign[countLoop*coresize->coresNumber],line,coresize->coresNumber);
+            memset(line,0,coresize->coresNumber);
+            countLoop++;
+        }
+        
+        free(line);
+        return allSign;
     }    
 
 uint8_t readerCloseSourceFile(const Reader* reader)
