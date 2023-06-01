@@ -8,11 +8,7 @@ typedef struct Reader
         char *path;
         FILE* f;    
     }Reader;
-typedef struct coreSize
-{
-    int amountSign;
-    int coresNumber;
-}coreSize;
+
 
 
 Reader* readerCreate(char* path);
