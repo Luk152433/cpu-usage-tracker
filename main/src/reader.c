@@ -26,6 +26,8 @@ char*    readerReadSourceFile(const Reader* reader,coreSize* coresize)
         char*const line=(char*)malloc(sizeof(char)*(coresize->amountSign));
         char*const line2=(char*)malloc(sizeof(char)*(coresize->amountSign));
         char*const line3=(char*)malloc(sizeof(char)*(coresize->amountSign)*(coresize->coresNumber+1));
+        char*const allSign=(char*)malloc(sizeof(char)*(coresize->amountSign)*(coresize->coresNumber+1));
+        
         int countLoop=0;
         while (countLoop<=(coresize->coresNumber))
         {   //if(countLoop<1){
@@ -44,14 +46,16 @@ char*    readerReadSourceFile(const Reader* reader,coreSize* coresize)
             //memset(line,0,coresize->amountSign);
             countLoop++;
         }
+        memcpy(allSign,line3,sizeof(char)*(coresize->amountSign)*(coresize->coresNumber+1));
         printf("%s%s",line3,&line3[1*sizeof(char)*(coresize->amountSign)]);
          free(line);
          free(line2);
-        //free(line3);
-         
+        free(line3);
+         printf("%s%s",allSign,&allSign[1*sizeof(char)*(coresize->amountSign)]);
+          
        
         
-        return line3;
+        return allSign;
     }    
 
 uint8_t readerCloseSourceFile(const Reader* reader)
