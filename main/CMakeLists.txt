@@ -34,7 +34,7 @@ add_library(compiler_flags INTERFACE)
 
 # append compile flags depending on the selected compiler and build type
 if(CMAKE_CXX_COMPILER_ID MATCHES GNU)
-  list(APPEND C_FLAGS "-Wall" "-Wextra")
+  list(APPEND C_FLAGS "-Wall" "-Wextra" )
 endif()
 
 if(CMAKE_CXX_COMPILER_ID MATCHES Clang)

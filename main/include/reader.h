@@ -8,11 +8,16 @@ typedef struct Reader
         char *path;
         FILE* f;    
     }Reader;
+typedef struct coreSize
+{
+    int amountSign;
+    int coresNumber;
+}coreSize;
 
 
 Reader* readerCreate(char* path);
 Reader* readerOpenSourceFile(Reader* reader);
-char*    readerReadSourceFile(const Reader* reader,coreSize* coresize);
+char*   readerReadSourceFile(const Reader* reader,coreSize* coresize);
 uint8_t readerCloseSourceFile(const Reader* reader);
 void    readerDestroy(Reader* reader);
 
