@@ -17,7 +17,7 @@ typedef struct coreSize
 }coreSize;
 
 typedef struct BufferCircularBuf {
-	char* buffer;
+	char*  buffer;
 	size_t head;
 	size_t tail;
 	size_t courentFillBuffer;

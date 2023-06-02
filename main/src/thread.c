@@ -51,7 +51,23 @@ void* readerThread(void* args)
     free(coreSizeV);
 }
 void* analyzerThread(void* args)
-{}
+{   
+    //////////while
+    sem_wait(&readAnalyzerSync.semFullBuffer);
+    pthread_mutex_lock(&readAnalyzerSync.mtx);
+    
+   char* reciveAnalyzer= bufferGetValue(readAnalyzerBuff);
+    
+    pthread_mutex_unlock(&readAnalyzerSync.mtx);
+    sem_post(&readAnalyzerSync.semEmptyBuffer);
+    //scanf....
+    free(reciveAnalyzer);
+
+
+    /////////whileend
+
+
+}
 void* printerThread(void* args)
 {}
 void* watchdogThread(void* args)
