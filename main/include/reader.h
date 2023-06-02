@@ -13,6 +13,7 @@ typedef struct Reader
 
 Reader* readerCreate(char* path);
 Reader* readerOpenSourceFile(Reader* reader);
+void    readerReOpenSourceFile(Reader* reader);
 char*   readerReadSourceFile(const Reader* reader,coreSize* coresize);
 uint8_t readerCloseSourceFile(const Reader* reader);
 void    readerDestroy(Reader* reader);

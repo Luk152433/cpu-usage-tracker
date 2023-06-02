@@ -20,6 +20,13 @@ Reader* readerOpenSourceFile(Reader* reader)
 // }
         return reader;
     }
+    void readerReOpenSourceFile(Reader* reader)
+    {  
+        fclose(reader->f);
+        reader->f=fopen(reader->path,"r");
+
+        return;
+    }
 
 char*    readerReadSourceFile(const Reader* reader,coreSize* coresize)
     {

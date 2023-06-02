@@ -33,11 +33,11 @@ set(C_FLAGS)
 add_library(compiler_flags INTERFACE)
 
 # append compile flags depending on the selected compiler and build type
-if(CMAKE_CXX_COMPILER_ID MATCHES GNU)
-  list(APPEND C_FLAGS "-Wall" "-Wextra" )
+if(CMAKE_C_COMPILER_ID MATCHES GNU)
+  list(APPEND C_FLAGS "-pthread" "-Wall" "-Wextra"   )
 endif()
 
-if(CMAKE_CXX_COMPILER_ID MATCHES Clang)
+if(CMAKE_C_COMPILER_ID MATCHES Clang)
   list(APPEND C_FLAGS "-Weverything")
 endif()
 target_compile_options(compiler_flags INTERFACE ${C_FLAGS}
