@@ -6,6 +6,8 @@
 #include <stdint.h>
 #include <string.h>
 #include <pthread.h>
+#include <semaphore.h>
+#include <unistd.h>
 
 
 typedef struct coreSize
@@ -25,6 +27,9 @@ typedef struct BufferCircularBuf {
 	
 }BufferCircularBuf;
 
+
+#define THREADS_NUM 5
+#define BUFFER_NUM 10
 #include "analyzer.h"
 #include "buffer.h"
 #include "printer.h"
