@@ -34,7 +34,7 @@ void bufferSetValue(BufferCircularBuf* bufferCircularBuf,char* wskSource)
 {
     
     memcpy(&bufferCircularBuf->buffer[(bufferCircularBuf->head)*(bufferCircularBuf->sizeOnePacket)],wskSource,bufferCircularBuf->sizeOnePacket);
-   // printf("%s",&bufferCircularBuf->buffer[(bufferCircularBuf->head)*(bufferCircularBuf->sizeOnePacket)]);
+   
    (bufferCircularBuf->courentFillBuffer)++;
    (bufferCircularBuf->head)++; 
    if(bufferCircularBuf->head==bufferCircularBuf->maxSize)

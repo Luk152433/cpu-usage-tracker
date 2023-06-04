@@ -39,16 +39,10 @@ double* analyzerCountRate(ProcDate* procDate,ProcDate* procDatePreviue,coreSize*
 
         double totald = (double)Total - (double)PrevTotal;
         double idled = (double)Idle - (double)PrevIdle;
-         printf( "%ld %ld %ld %ld %ld %ld %ld %ld %ld %ld \n",procDatePreviue[i].user,procDatePreviue[i].nice,procDatePreviue[i].system,
-         procDatePreviue[i].idle,procDatePreviue[i].iowait,procDatePreviue[i].irq,procDatePreviue[i].softirq,procDatePreviue[i].steal,procDatePreviue[i].guest,procDatePreviue[i].guestNice);  
         
-        // if(totald==0)
-        // {
-        //     allPercentValue[i]=0;
-        // }else{
+ 
         allPercentValue[i]=(1000*(totald - idled)/totald+1)/10;
-        
-        //}
+       
     }
   
     return allPercentValue;

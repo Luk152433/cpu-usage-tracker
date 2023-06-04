@@ -23,9 +23,10 @@ typedef struct BufferCircularBuf {
 	size_t courentFillBuffer;
 	size_t maxSize;
 	size_t sizeOnePacket;
-	pthread_mutex_t mutex; 
-	
+	pthread_mutex_t mutex; 	
 }BufferCircularBuf;
+
+
 
 
 #define THREADS_NUM 5

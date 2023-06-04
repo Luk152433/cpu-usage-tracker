@@ -37,15 +37,14 @@ void* readerThread(void* args)
     
     Reader* reader=readerCreate("/proc/stat");
     reader=readerOpenSourceFile(reader);
-    /////////while
+   
     while(n<30){
 
     readerReOpenSourceFile(reader);
     char*wsk= readerReadSourceFile(reader,coreSizeV);
     sem_wait(&readAnalyzerSync.semEmptyBuffer);
     pthread_mutex_lock(&readAnalyzerSync.mtx);
-   // printf("reader");
-    //printf("%s%s",wsk,&wsk[1*sizeof(char)*(coreSizeV->amountSign)]);
+ 
     bufferSetValue(readAnalyzerBuff,wsk);
     
     pthread_mutex_unlock(&readAnalyzerSync.mtx);
@@ -54,7 +53,7 @@ void* readerThread(void* args)
     sleep(1);
     n++;
     }
-    /////////whileend
+    
     readerCloseSourceFile(reader);
     
     readerDestroy(reader);
@@ -72,8 +71,7 @@ void* analyzerThread(void* args)
     
     pthread_mutex_unlock(&readAnalyzerSync.mtx);
     sem_post(&readAnalyzerSync.semEmptyBuffer);
-    //printf("analyzer");
-    //printf("%s%s",reciveAnalyzer,&reciveAnalyzer[1*sizeof(char)*(coreSizeV->amountSign)]);
+    
     
 
     for(int i=0;i<=coreSizeV->coresNumber;i++)
@@ -85,49 +83,24 @@ void* analyzerThread(void* args)
     }
     free(reciveAnalyzer);
 
-    printf("analyzerSSS\n");
-    for(int i=0;i<=coreSizeV->coresNumber;i++)
-    {
-   printf( "%s %ld %ld %ld %ld %ld %ld %ld %ld %ld %ld \n",procDate[i].name,procDate[i].user,procDate[i].nice,procDate[i].system,
-        procDate[i].idle,procDate[i].iowait,procDate[i].irq,procDate[i].softirq,procDate[i].steal,procDate[i].guest,procDate[i].guestNice);
-    }
-    printf("analyzerSE\n");
+  
+ 
 
-   printf("analyzerPREV\n");
-       
-//   for(int i=0;i<=coreSizeV->coresNumber;i++)
-//     {
-//         printf( "%s %ld %ld %ld %ld %ld %ld %ld %ld %ld %ld \n",procDatePreviue[i].name,procDatePreviue[i].user,procDatePreviue[i].nice,procDatePreviue[i].system,
-//         procDatePreviue[i].idle,procDatePreviue[i].iowait,procDatePreviue[i].irq,procDatePreviue[i].softirq,procDatePreviue[i].steal,procDatePreviue[i].guest,procDatePreviue[i].guestNice);  
-//     }     
-        printf("EanalyzerPREV\n");
-    // for(int i=0;i<=coreSizeV->coresNumber;i++)
-    // {
-    //     memcpy(procDatePreviue,procDate,sizeof(*procDate));
-    // }
+ 
         double* allPrec=analyzerCountRate( procDate,procDatePreviue,coreSizeV);
     
 
-    for(int i=0;i<=coreSizeV->coresNumber;i++)
-    {
-        printf("%f \n",allPrec[i]);
-    }
-    printf("A1\n");
+   
     sem_wait(&analyzerPrinterSync.semEmptyBuffer);
     pthread_mutex_lock(&analyzerPrinterSync.mtx);
-      printf("A2\n");
-/////////////////////
-//malloc(sizeof(allPrec)*(coreSizeV->coresNumber+1));
-    //char* temp=(char*)allPrec;
+     
+
     char*temp=(char*)malloc(sizeof(double)*(coreSizeV->coresNumber+1));
-    //bufferSetValue(analyzerPrinterBuff,(char*)allPrec);
+    
      memcpy(temp,allPrec,sizeof(double)*(coreSizeV->coresNumber+1));
 
-       printf("A3\n");
-     for(int i=0;i<=coreSizeV->coresNumber;i++)
-    {
-       printf("%f \n",(double)temp[i*8]);
-    }
+       
+  
 
     bufferSetValue(analyzerPrinterBuff,temp);
     pthread_mutex_unlock(&analyzerPrinterSync.mtx);
@@ -161,13 +134,14 @@ void* analyzerThread(void* args)
 bufferDestroy(readAnalyzerBuff);
 analyzerDestroy(procDate,procDatePreviue);
 
-    /////////whileend
+   
 
 
 }
 void* printerThread(void* args)
 {   
    int k=0;
+   StoragePrinter* storagePrinter=printerCreate(coreSizeV);
     while(k<30){
     sem_wait(&analyzerPrinterSync.semFullBuffer);
     pthread_mutex_lock(&analyzerPrinterSync.mtx);
@@ -176,15 +150,18 @@ void* printerThread(void* args)
     
     pthread_mutex_unlock(&analyzerPrinterSync.mtx);
     sem_post(&analyzerPrinterSync.semEmptyBuffer);
-
-    printf("reader\n");
-    printf("%f %f",recivereader[0],recivereader[1]);
-     printf("readerKONiec\n");
+    memcpy(storagePrinter->allRateValue,recivereader,(sizeof(double)*(coreSizeV->coresNumber+1)));
     free(recivereader);
+    printf("reader\n");
+   
+    printerDisplay(storagePrinter);
+    printf("readerKONiec\n");
+    
     sleep(1);
     k++;
     }
     bufferDestroy(analyzerPrinterBuff);
+    printerDestroy(storagePrinter);
 
 }
 void* watchdogThread(void* args)

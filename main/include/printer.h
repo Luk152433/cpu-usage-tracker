@@ -1,9 +1,15 @@
 #ifndef PRINTER_H
 #define PRINTER_H
 
+typedef struct StoragePrinter
+{
+    double* allRateValue;
+	int numberLevels;
+    
+}StoragePrinter;
 
-printerCreate();
-printerDisplay();
-printerDestroy();
+StoragePrinter* printerCreate(coreSize* coresize);
+void printerDisplay(StoragePrinter* storageprinter);
+void printerDestroy(StoragePrinter* storageprinter);
 
 #endif 
