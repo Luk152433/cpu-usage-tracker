@@ -54,11 +54,11 @@ char*    readerReadSourceFile(const Reader* reader,coreSize* coresize)
             countLoop++;
         }
         memcpy(allSign,line3,sizeof(char)*(coresize->amountSign)*(coresize->coresNumber+1));
-        printf("%s%s",line3,&line3[1*sizeof(char)*(coresize->amountSign)]);
+        //printf("%s%s",line3,&line3[1*sizeof(char)*(coresize->amountSign)]);
         free(line);
         free(line2);
         free(line3);
-        printf("%s%s",allSign,&allSign[1*sizeof(char)*(coresize->amountSign)]);
+        //printf("%s%s",allSign,&allSign[1*sizeof(char)*(coresize->amountSign)]);
           
        
         

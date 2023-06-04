@@ -34,7 +34,7 @@ void bufferSetValue(BufferCircularBuf* bufferCircularBuf,char* wskSource)
 {
     
     memcpy(&bufferCircularBuf->buffer[(bufferCircularBuf->head)*(bufferCircularBuf->sizeOnePacket)],wskSource,bufferCircularBuf->sizeOnePacket);
-    printf("%s",&bufferCircularBuf->buffer[(bufferCircularBuf->head)*(bufferCircularBuf->sizeOnePacket)]);
+   // printf("%s",&bufferCircularBuf->buffer[(bufferCircularBuf->head)*(bufferCircularBuf->sizeOnePacket)]);
    (bufferCircularBuf->courentFillBuffer)++;
    (bufferCircularBuf->head)++; 
    if(bufferCircularBuf->head==bufferCircularBuf->maxSize)
@@ -45,6 +45,7 @@ void bufferSetValue(BufferCircularBuf* bufferCircularBuf,char* wskSource)
 char* bufferGetValue(BufferCircularBuf* bufferCircularBuf)
 {
     char* outBufferVal=malloc(bufferCircularBuf->sizeOnePacket);
+      *outBufferVal='0';
     memcpy(outBufferVal,&bufferCircularBuf->buffer[(bufferCircularBuf->tail)*(bufferCircularBuf->sizeOnePacket)],bufferCircularBuf->sizeOnePacket);
     (bufferCircularBuf->courentFillBuffer)--;
     (bufferCircularBuf->tail)++; 
