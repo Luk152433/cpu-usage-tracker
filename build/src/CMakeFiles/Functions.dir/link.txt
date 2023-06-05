@@ -1,0 +1,2 @@
+/usr/bin/ar qc libFunctions.a CMakeFiles/Functions.dir/thread.c.o CMakeFiles/Functions.dir/reader.c.o CMakeFiles/Functions.dir/printer.c.o CMakeFiles/Functions.dir/analyzer.c.o CMakeFiles/Functions.dir/buffer.c.o
+/usr/bin/ranlib libFunctions.a
