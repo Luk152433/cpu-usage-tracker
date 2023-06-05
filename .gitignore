@@ -1,1 +1,16 @@
 build/**
+main/CMakeFiles
+main/CMakeCache.txt
+main/Makefile
+main/cmake_install.cmake
+main/Projec
+main/TestProjec
+main/src/cmake_install.cmake
+main/src/CMakeFiles
+main/src/Makefile
+main/src/libFunctions.a
+main/test/CMakeFiles
+main/test/cmake_install.cmake
+main/test/Makefile
+
+

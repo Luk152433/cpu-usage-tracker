@@ -1,4 +1,4 @@
-add_library(Functions reader.c printer.c thread.c analyzer.c)
+add_library(Functions thread.c reader.c printer.c analyzer.c buffer.c)
 target_include_directories(Functions
           PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../include/
           )
