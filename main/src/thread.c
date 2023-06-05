@@ -8,10 +8,26 @@ typedef struct mutexSema
     sem_t semFullBuffer;
 }mutexSema;
 BufferCircularBuf* readAnalyzerBuff,*analyzerPrinterBuff;
-
+StoragePrinter* storagePrinter;
+Reader* reader;
+ProcDate* procDate;
+ProcDate* procDatePreviue;
 pthread_t threadTab[THREADS_NUM];
 mutexSema readAnalyzerSync, analyzerPrinterSync;
-   
+
+  void signal_exit(const int signum) {
+  
+  printf(" Signal %d end run\n", signum);
+    free(coreSizeV);
+    free(analizerSizeV);
+    readerCloseSourceFile(reader);
+    readerDestroy(reader);
+    bufferDestroy(readAnalyzerBuff);
+    analyzerDestroy(procDate,procDatePreviue);
+    bufferDestroy(analyzerPrinterBuff);
+    printerDestroy(storagePrinter);
+
+} 
 
 void run(){
     prepareVariable();
@@ -35,7 +51,7 @@ void* readerThread(void* args)
 {
        int n=0;
     
-    Reader* reader=readerCreate("/proc/stat");
+     reader=readerCreate("/proc/stat");
     reader=readerOpenSourceFile(reader);
    
     while(n<30){
@@ -61,8 +77,8 @@ void* readerThread(void* args)
 }
 void* analyzerThread(void* args)
 {   int m=0;
-    ProcDate* procDate=analyzerCreate(coreSizeV);
-    ProcDate* procDatePreviue=analyzerCreate(coreSizeV);
+    procDate=analyzerCreate(coreSizeV);
+     procDatePreviue=analyzerCreate(coreSizeV);
     while(m<30){
     sem_wait(&readAnalyzerSync.semFullBuffer);
     pthread_mutex_lock(&readAnalyzerSync.mtx);
@@ -87,7 +103,7 @@ void* analyzerThread(void* args)
  
 
  
-        double* allPrec=analyzerCountRate( procDate,procDatePreviue,coreSizeV);
+    double* allPrec=analyzerCountRate( procDate,procDatePreviue,coreSizeV);
     
 
    
@@ -141,7 +157,7 @@ analyzerDestroy(procDate,procDatePreviue);
 void* printerThread(void* args)
 {   
    int k=0;
-   StoragePrinter* storagePrinter=printerCreate(coreSizeV);
+   storagePrinter=printerCreate(coreSizeV);
     while(k<30){
     sem_wait(&analyzerPrinterSync.semFullBuffer);
     pthread_mutex_lock(&analyzerPrinterSync.mtx);

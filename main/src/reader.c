@@ -8,6 +8,7 @@ Reader* readerCreate(char* path)
         Reader* reader = (Reader*)malloc(sizeof(*reader));
         reader->path=path;
 
+        
         return reader;
     }
 

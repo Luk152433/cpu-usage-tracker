@@ -6,5 +6,6 @@ void* analyzerThread(void* args);
 void* printerThread(void* args);
 void* watchdogThread(void* args);
 void* loggerThread(void* args);
+void signal_exit(int signum);
 
 #endif 

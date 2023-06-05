@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
 
 project(Project VERSION 1.0)
+
 #set(CMAKE_C_COMPILER "$ENV{CC}")
 #message(STATUS ${CMAKE_CXX_COMPILER_ID})
 #if($ENV{CC} MATCHES /usr/bin/clang)
@@ -38,7 +39,7 @@ if(CMAKE_C_COMPILER_ID MATCHES GNU)
 endif()
 
 if(CMAKE_C_COMPILER_ID MATCHES Clang)
-  list(APPEND C_FLAGS "-Weverything")
+  list(APPEND C_FLAGS "-pthread" "-Weverything")
 endif()
 target_compile_options(compiler_flags INTERFACE ${C_FLAGS}
 )
