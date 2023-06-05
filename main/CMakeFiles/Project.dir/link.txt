@@ -1,1 +1,0 @@
-/usr/bin/gcc CMakeFiles/Project.dir/main.c.o -o Project  src/libFunctions.a 
