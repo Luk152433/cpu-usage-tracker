@@ -117,17 +117,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named TestProject
+# Target rules for targets named Project
 
 # Build rule for target.
-TestProject: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 TestProject
-.PHONY : TestProject
+Project: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Project
+.PHONY : Project
 
 # fast build rule for target.
-TestProject/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestProject.dir/build.make CMakeFiles/TestProject.dir/build
-.PHONY : TestProject/fast
+Project/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/build
+.PHONY : Project/fast
 
 #=============================================================================
 # Target rules for targets named Functions
@@ -142,29 +142,29 @@ Functions/fast:
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/Functions.dir/build.make src/CMakeFiles/Functions.dir/build
 .PHONY : Functions/fast
 
-test/test.o: test/test.c.o
-.PHONY : test/test.o
+main.o: main.c.o
+.PHONY : main.o
 
 # target to build an object file
-test/test.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestProject.dir/build.make CMakeFiles/TestProject.dir/test/test.c.o
-.PHONY : test/test.c.o
+main.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/main.c.o
+.PHONY : main.c.o
 
-test/test.i: test/test.c.i
-.PHONY : test/test.i
+main.i: main.c.i
+.PHONY : main.i
 
 # target to preprocess a source file
-test/test.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestProject.dir/build.make CMakeFiles/TestProject.dir/test/test.c.i
-.PHONY : test/test.c.i
+main.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/main.c.i
+.PHONY : main.c.i
 
-test/test.s: test/test.c.s
-.PHONY : test/test.s
+main.s: main.c.s
+.PHONY : main.s
 
 # target to generate assembly for a file
-test/test.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestProject.dir/build.make CMakeFiles/TestProject.dir/test/test.c.s
-.PHONY : test/test.c.s
+main.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/main.c.s
+.PHONY : main.c.s
 
 # Help Target
 help:
@@ -175,10 +175,10 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Functions"
-	@echo "... TestProject"
-	@echo "... test/test.o"
-	@echo "... test/test.i"
-	@echo "... test/test.s"
+	@echo "... Project"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 

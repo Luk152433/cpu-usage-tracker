@@ -1,30 +1,32 @@
 //#include "thread.h"
 #include "header.h"
-coreSize*  coreSizeV,*analizerSizeV;
+static coreSize*  coreSizeV;
+static coreSize*  analizerSizeV;
 
 typedef struct mutexSema
     {
         pthread_mutex_t mtx;
         sem_t semEmptyBuffer;
         sem_t semFullBuffer;
-        
+
     }mutexSema;
 
-BufferCircularBuf* readAnalyzerBuff,*analyzerPrinterBuff;
-StoragePrinter* storagePrinter;
-Reader* reader;
-ProcDate* procDate;
-ProcDate* procDatePreviue;
-char* wskReader;
-char* reciveAnalyzer;
-double* allPrec;
-char* temp;
-double* recivereader;
-pthread_t threadTab[THREADS_NUM];
-mutexSema readAnalyzerSync, analyzerPrinterSync;
+static BufferCircularBuf* readAnalyzerBuff,*analyzerPrinterBuff;
+static StoragePrinter* storagePrinter;
+static Reader* reader;
+static ProcDate* procDate;
+static ProcDate* procDatePreviue;
+static char* wskReader;
+static char* reciveAnalyzer;
+static double* allPrec;
+static char* temp;
+static double* recivereader;
+static pthread_t threadTab[THREADS_NUM];
+static mutexSema readAnalyzerSync;
+static mutexSema analyzerPrinterSync;
 
-void prepareVariable();
-void  setThread();
+void prepareVariable(void);
+void  setThread(void);
 
 void signal_exit(const int signum) 
     {
@@ -257,3 +259,4 @@ void setThread()
         free(analizerSizeV);
 
     }
+

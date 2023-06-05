@@ -1,1 +1,0 @@
-/usr/bin/clang CMakeFiles/TestProject.dir/test/test.c.o -o TestProject  src/libFunctions.a 

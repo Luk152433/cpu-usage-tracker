@@ -3,6 +3,7 @@
 #include <unistd.h>
 #include <sys/sysinfo.h>
 
+void testCreateReader(void);
 void testCreateReader(void)
 {
     Reader* reader=readerCreate("/proc/stat");
@@ -12,14 +13,18 @@ void testCreateReader(void)
 
 }
 
+void testReaderOpenSourceFile(void);
 void testReaderOpenSourceFile(void)
-{   Reader Mreader;
+{  
+     Reader Mreader;
     Mreader.path="/proc/stat";
     Reader* reader=readerOpenSourceFile(&Mreader);
     assert(reader!=NULL);
 
 
 }
+
+void testReaderReadSourceFile(void);
 void testReaderReadSourceFile(void)
 { 
     Reader* reader=readerCreate("/proc/stat");
@@ -39,6 +44,7 @@ void testReaderReadSourceFile(void)
 
 } 
 
+void testReaderCloseSourceFile(void);
 void testReaderCloseSourceFile(void)
 {  
     Reader* reader=readerCreate("/proc/stat");
@@ -54,6 +60,7 @@ void testReaderCloseSourceFile(void)
 
 }
 
+void testReader(void);
 void testReader(void)
 {
     testCreateReader();

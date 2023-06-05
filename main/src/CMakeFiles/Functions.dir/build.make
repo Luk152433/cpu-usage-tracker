@@ -73,71 +73,71 @@ src/CMakeFiles/Functions.dir/thread.c.o: src/CMakeFiles/Functions.dir/flags.make
 src/CMakeFiles/Functions.dir/thread.c.o: src/thread.c
 src/CMakeFiles/Functions.dir/thread.c.o: src/CMakeFiles/Functions.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/acad/Documents/CPU/main/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object src/CMakeFiles/Functions.dir/thread.c.o"
-	cd /home/acad/Documents/CPU/main/src && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/Functions.dir/thread.c.o -MF CMakeFiles/Functions.dir/thread.c.o.d -o CMakeFiles/Functions.dir/thread.c.o -c /home/acad/Documents/CPU/main/src/thread.c
+	cd /home/acad/Documents/CPU/main/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/Functions.dir/thread.c.o -MF CMakeFiles/Functions.dir/thread.c.o.d -o CMakeFiles/Functions.dir/thread.c.o -c /home/acad/Documents/CPU/main/src/thread.c
 
 src/CMakeFiles/Functions.dir/thread.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Functions.dir/thread.c.i"
-	cd /home/acad/Documents/CPU/main/src && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/acad/Documents/CPU/main/src/thread.c > CMakeFiles/Functions.dir/thread.c.i
+	cd /home/acad/Documents/CPU/main/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/acad/Documents/CPU/main/src/thread.c > CMakeFiles/Functions.dir/thread.c.i
 
 src/CMakeFiles/Functions.dir/thread.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Functions.dir/thread.c.s"
-	cd /home/acad/Documents/CPU/main/src && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/acad/Documents/CPU/main/src/thread.c -o CMakeFiles/Functions.dir/thread.c.s
+	cd /home/acad/Documents/CPU/main/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/acad/Documents/CPU/main/src/thread.c -o CMakeFiles/Functions.dir/thread.c.s
 
 src/CMakeFiles/Functions.dir/reader.c.o: src/CMakeFiles/Functions.dir/flags.make
 src/CMakeFiles/Functions.dir/reader.c.o: src/reader.c
 src/CMakeFiles/Functions.dir/reader.c.o: src/CMakeFiles/Functions.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/acad/Documents/CPU/main/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object src/CMakeFiles/Functions.dir/reader.c.o"
-	cd /home/acad/Documents/CPU/main/src && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/Functions.dir/reader.c.o -MF CMakeFiles/Functions.dir/reader.c.o.d -o CMakeFiles/Functions.dir/reader.c.o -c /home/acad/Documents/CPU/main/src/reader.c
+	cd /home/acad/Documents/CPU/main/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/Functions.dir/reader.c.o -MF CMakeFiles/Functions.dir/reader.c.o.d -o CMakeFiles/Functions.dir/reader.c.o -c /home/acad/Documents/CPU/main/src/reader.c
 
 src/CMakeFiles/Functions.dir/reader.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Functions.dir/reader.c.i"
-	cd /home/acad/Documents/CPU/main/src && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/acad/Documents/CPU/main/src/reader.c > CMakeFiles/Functions.dir/reader.c.i
+	cd /home/acad/Documents/CPU/main/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/acad/Documents/CPU/main/src/reader.c > CMakeFiles/Functions.dir/reader.c.i
 
 src/CMakeFiles/Functions.dir/reader.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Functions.dir/reader.c.s"
-	cd /home/acad/Documents/CPU/main/src && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/acad/Documents/CPU/main/src/reader.c -o CMakeFiles/Functions.dir/reader.c.s
+	cd /home/acad/Documents/CPU/main/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/acad/Documents/CPU/main/src/reader.c -o CMakeFiles/Functions.dir/reader.c.s
 
 src/CMakeFiles/Functions.dir/printer.c.o: src/CMakeFiles/Functions.dir/flags.make
 src/CMakeFiles/Functions.dir/printer.c.o: src/printer.c
 src/CMakeFiles/Functions.dir/printer.c.o: src/CMakeFiles/Functions.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/acad/Documents/CPU/main/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object src/CMakeFiles/Functions.dir/printer.c.o"
-	cd /home/acad/Documents/CPU/main/src && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/Functions.dir/printer.c.o -MF CMakeFiles/Functions.dir/printer.c.o.d -o CMakeFiles/Functions.dir/printer.c.o -c /home/acad/Documents/CPU/main/src/printer.c
+	cd /home/acad/Documents/CPU/main/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/Functions.dir/printer.c.o -MF CMakeFiles/Functions.dir/printer.c.o.d -o CMakeFiles/Functions.dir/printer.c.o -c /home/acad/Documents/CPU/main/src/printer.c
 
 src/CMakeFiles/Functions.dir/printer.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Functions.dir/printer.c.i"
-	cd /home/acad/Documents/CPU/main/src && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/acad/Documents/CPU/main/src/printer.c > CMakeFiles/Functions.dir/printer.c.i
+	cd /home/acad/Documents/CPU/main/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/acad/Documents/CPU/main/src/printer.c > CMakeFiles/Functions.dir/printer.c.i
 
 src/CMakeFiles/Functions.dir/printer.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Functions.dir/printer.c.s"
-	cd /home/acad/Documents/CPU/main/src && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/acad/Documents/CPU/main/src/printer.c -o CMakeFiles/Functions.dir/printer.c.s
+	cd /home/acad/Documents/CPU/main/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/acad/Documents/CPU/main/src/printer.c -o CMakeFiles/Functions.dir/printer.c.s
 
 src/CMakeFiles/Functions.dir/analyzer.c.o: src/CMakeFiles/Functions.dir/flags.make
 src/CMakeFiles/Functions.dir/analyzer.c.o: src/analyzer.c
 src/CMakeFiles/Functions.dir/analyzer.c.o: src/CMakeFiles/Functions.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/acad/Documents/CPU/main/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object src/CMakeFiles/Functions.dir/analyzer.c.o"
-	cd /home/acad/Documents/CPU/main/src && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/Functions.dir/analyzer.c.o -MF CMakeFiles/Functions.dir/analyzer.c.o.d -o CMakeFiles/Functions.dir/analyzer.c.o -c /home/acad/Documents/CPU/main/src/analyzer.c
+	cd /home/acad/Documents/CPU/main/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/Functions.dir/analyzer.c.o -MF CMakeFiles/Functions.dir/analyzer.c.o.d -o CMakeFiles/Functions.dir/analyzer.c.o -c /home/acad/Documents/CPU/main/src/analyzer.c
 
 src/CMakeFiles/Functions.dir/analyzer.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Functions.dir/analyzer.c.i"
-	cd /home/acad/Documents/CPU/main/src && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/acad/Documents/CPU/main/src/analyzer.c > CMakeFiles/Functions.dir/analyzer.c.i
+	cd /home/acad/Documents/CPU/main/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/acad/Documents/CPU/main/src/analyzer.c > CMakeFiles/Functions.dir/analyzer.c.i
 
 src/CMakeFiles/Functions.dir/analyzer.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Functions.dir/analyzer.c.s"
-	cd /home/acad/Documents/CPU/main/src && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/acad/Documents/CPU/main/src/analyzer.c -o CMakeFiles/Functions.dir/analyzer.c.s
+	cd /home/acad/Documents/CPU/main/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/acad/Documents/CPU/main/src/analyzer.c -o CMakeFiles/Functions.dir/analyzer.c.s
 
 src/CMakeFiles/Functions.dir/buffer.c.o: src/CMakeFiles/Functions.dir/flags.make
 src/CMakeFiles/Functions.dir/buffer.c.o: src/buffer.c
 src/CMakeFiles/Functions.dir/buffer.c.o: src/CMakeFiles/Functions.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/acad/Documents/CPU/main/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object src/CMakeFiles/Functions.dir/buffer.c.o"
-	cd /home/acad/Documents/CPU/main/src && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/Functions.dir/buffer.c.o -MF CMakeFiles/Functions.dir/buffer.c.o.d -o CMakeFiles/Functions.dir/buffer.c.o -c /home/acad/Documents/CPU/main/src/buffer.c
+	cd /home/acad/Documents/CPU/main/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/Functions.dir/buffer.c.o -MF CMakeFiles/Functions.dir/buffer.c.o.d -o CMakeFiles/Functions.dir/buffer.c.o -c /home/acad/Documents/CPU/main/src/buffer.c
 
 src/CMakeFiles/Functions.dir/buffer.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Functions.dir/buffer.c.i"
-	cd /home/acad/Documents/CPU/main/src && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/acad/Documents/CPU/main/src/buffer.c > CMakeFiles/Functions.dir/buffer.c.i
+	cd /home/acad/Documents/CPU/main/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/acad/Documents/CPU/main/src/buffer.c > CMakeFiles/Functions.dir/buffer.c.i
 
 src/CMakeFiles/Functions.dir/buffer.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Functions.dir/buffer.c.s"
-	cd /home/acad/Documents/CPU/main/src && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/acad/Documents/CPU/main/src/buffer.c -o CMakeFiles/Functions.dir/buffer.c.s
+	cd /home/acad/Documents/CPU/main/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/acad/Documents/CPU/main/src/buffer.c -o CMakeFiles/Functions.dir/buffer.c.s
 
 # Object files for target Functions
 Functions_OBJECTS = \
