@@ -1,1 +1,0 @@
-/usr/bin/gcc CMakeFiles/TestProject.dir/test.c.o -o TestProject  ../src/libFunctions.a 
