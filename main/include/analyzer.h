@@ -23,3 +23,4 @@ void analyzerDestroy(ProcDate* procDate,ProcDate* procDatePreviue);
 
 
 #endif 
+

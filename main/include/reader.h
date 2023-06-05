@@ -19,3 +19,4 @@ uint8_t readerCloseSourceFile(const Reader* reader);
 void    readerDestroy(Reader* reader);
 
 #endif 
+

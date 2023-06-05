@@ -9,7 +9,7 @@
 
 
 
-int main(int argc, char *argv[])
+int main(void)
 {
     struct sigaction action;
     memset(&action, 0, sizeof(struct sigaction));

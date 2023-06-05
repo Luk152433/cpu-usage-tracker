@@ -13,3 +13,4 @@ void printerDisplay(StoragePrinter* storageprinter);
 void printerDestroy(StoragePrinter* storageprinter);
 
 #endif 
+

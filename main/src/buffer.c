@@ -45,7 +45,7 @@ void bufferSetValue(BufferCircularBuf* bufferCircularBuf,char* wskSource)
 char* bufferGetValue(BufferCircularBuf* bufferCircularBuf)
 {
     char* outBufferVal=malloc(bufferCircularBuf->sizeOnePacket);
-      *outBufferVal='0';
+    *outBufferVal='0';
     memcpy(outBufferVal,&bufferCircularBuf->buffer[(bufferCircularBuf->tail)*(bufferCircularBuf->sizeOnePacket)],bufferCircularBuf->sizeOnePacket);
     (bufferCircularBuf->courentFillBuffer)--;
     (bufferCircularBuf->tail)++; 

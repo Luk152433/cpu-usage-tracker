@@ -8,6 +8,7 @@
 #include <pthread.h>
 #include <semaphore.h>
 #include <unistd.h>
+#include <sys/sysinfo.h>
 
 
 typedef struct coreSize
@@ -41,3 +42,4 @@ typedef struct BufferCircularBuf {
 
 
 #endif
+

@@ -9,3 +9,4 @@ void bufferCheckEmptyBuf(BufferCircularBuf* bufferCircularBuf);
 void bufferCheckFillBuf(BufferCircularBuf* bufferCircularBuf);
 
 #endif  
+

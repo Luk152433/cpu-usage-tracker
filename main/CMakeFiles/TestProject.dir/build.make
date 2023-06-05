@@ -73,15 +73,15 @@ CMakeFiles/TestProject.dir/test/test.c.o: CMakeFiles/TestProject.dir/flags.make
 CMakeFiles/TestProject.dir/test/test.c.o: test/test.c
 CMakeFiles/TestProject.dir/test/test.c.o: CMakeFiles/TestProject.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/acad/Documents/CPU/main/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/TestProject.dir/test/test.c.o"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/TestProject.dir/test/test.c.o -MF CMakeFiles/TestProject.dir/test/test.c.o.d -o CMakeFiles/TestProject.dir/test/test.c.o -c /home/acad/Documents/CPU/main/test/test.c
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/TestProject.dir/test/test.c.o -MF CMakeFiles/TestProject.dir/test/test.c.o.d -o CMakeFiles/TestProject.dir/test/test.c.o -c /home/acad/Documents/CPU/main/test/test.c
 
 CMakeFiles/TestProject.dir/test/test.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/TestProject.dir/test/test.c.i"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/acad/Documents/CPU/main/test/test.c > CMakeFiles/TestProject.dir/test/test.c.i
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/acad/Documents/CPU/main/test/test.c > CMakeFiles/TestProject.dir/test/test.c.i
 
 CMakeFiles/TestProject.dir/test/test.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/TestProject.dir/test/test.c.s"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/acad/Documents/CPU/main/test/test.c -o CMakeFiles/TestProject.dir/test/test.c.s
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/acad/Documents/CPU/main/test/test.c -o CMakeFiles/TestProject.dir/test/test.c.s
 
 # Object files for target TestProject
 TestProject_OBJECTS = \

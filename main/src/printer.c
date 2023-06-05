@@ -29,5 +29,8 @@ void printerDisplay(StoragePrinter* storageprinter){
         }
 
     }
+    
+    printf("\n");
+
     return;
 }

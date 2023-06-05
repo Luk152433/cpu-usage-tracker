@@ -3,7 +3,6 @@
 
 CMakeFiles/TestProject.dir/test/test.c.o
  /home/acad/Documents/CPU/main/test/test.c
- /usr/include/stdc-predef.h
  /home/acad/Documents/CPU/main/include/header.h
  /usr/include/stdlib.h
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h
@@ -11,18 +10,19 @@ CMakeFiles/TestProject.dir/test/test.c.o
  /usr/include/features-time64.h
  /usr/include/x86_64-linux-gnu/bits/wordsize.h
  /usr/include/x86_64-linux-gnu/bits/timesize.h
+ /usr/include/stdc-predef.h
  /usr/include/x86_64-linux-gnu/sys/cdefs.h
  /usr/include/x86_64-linux-gnu/bits/long-double.h
  /usr/include/x86_64-linux-gnu/gnu/stubs.h
  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h
- /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h
+ /usr/lib/llvm-14/lib/clang/14.0.0/include/stddef.h
  /usr/include/x86_64-linux-gnu/bits/waitflags.h
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h
  /usr/include/x86_64-linux-gnu/bits/floatn.h
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h
  /usr/include/stdio.h
- /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h
+ /usr/lib/llvm-14/lib/clang/14.0.0/include/stdarg.h
  /usr/include/x86_64-linux-gnu/bits/types.h
  /usr/include/x86_64-linux-gnu/bits/typesizes.h
  /usr/include/x86_64-linux-gnu/bits/time64.h
@@ -33,7 +33,7 @@ CMakeFiles/TestProject.dir/test/test.c.o
  /usr/include/x86_64-linux-gnu/bits/types/FILE.h
  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h
- /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h
+ /usr/lib/llvm-14/lib/clang/14.0.0/include/stdint.h
  /usr/include/stdint.h
  /usr/include/x86_64-linux-gnu/bits/wchar.h
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h
@@ -76,14 +76,6 @@ CMakeFiles/TestProject.dir/test/test.c.o
  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h
  /usr/include/x86_64-linux-gnu/bits/getopt_core.h
  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h
- /home/acad/Documents/CPU/main/include/analyzer.h
- /home/acad/Documents/CPU/main/include/buffer.h
- /home/acad/Documents/CPU/main/include/printer.h
- /home/acad/Documents/CPU/main/include/reader.h
- /home/acad/Documents/CPU/main/include/header.h
- /home/acad/Documents/CPU/main/include/thread.h
- /home/acad/Documents/CPU/main/test/testReader.h
- /usr/include/assert.h
  /usr/include/x86_64-linux-gnu/sys/sysinfo.h
  /usr/include/linux/kernel.h
  /usr/include/linux/sysinfo.h
@@ -99,4 +91,11 @@ CMakeFiles/TestProject.dir/test/test.c.o
  /usr/include/x86_64-linux-gnu/asm/posix_types_64.h
  /usr/include/asm-generic/posix_types.h
  /usr/include/linux/const.h
+ /home/acad/Documents/CPU/main/include/analyzer.h
+ /home/acad/Documents/CPU/main/include/buffer.h
+ /home/acad/Documents/CPU/main/include/printer.h
+ /home/acad/Documents/CPU/main/include/reader.h
+ /home/acad/Documents/CPU/main/include/thread.h
+ /home/acad/Documents/CPU/main/test/testReader.h
+ /usr/include/assert.h
 
