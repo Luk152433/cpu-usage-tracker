@@ -63,17 +63,20 @@ CMAKE_BINARY_DIR = /home/acad/Documents/CPU/main
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/Project.dir/all
+all: CMakeFiles/TestProject.dir/all
 all: src/all
+all: test/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
 preinstall: src/preinstall
+preinstall: test/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/Project.dir/clean
+clean: CMakeFiles/TestProject.dir/clean
 clean: src/clean
+clean: test/clean
 .PHONY : clean
 
 #=============================================================================
@@ -92,30 +95,45 @@ src/clean: src/CMakeFiles/Functions.dir/clean
 .PHONY : src/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/Project.dir
+# Directory level rules for directory test
+
+# Recursive "all" directory target.
+test/all:
+.PHONY : test/all
+
+# Recursive "preinstall" directory target.
+test/preinstall:
+.PHONY : test/preinstall
+
+# Recursive "clean" directory target.
+test/clean:
+.PHONY : test/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/TestProject.dir
 
 # All Build rule for target.
-CMakeFiles/Project.dir/all: src/CMakeFiles/Functions.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/acad/Documents/CPU/main/CMakeFiles --progress-num=7,8 "Built target Project"
-.PHONY : CMakeFiles/Project.dir/all
+CMakeFiles/TestProject.dir/all: src/CMakeFiles/Functions.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestProject.dir/build.make CMakeFiles/TestProject.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestProject.dir/build.make CMakeFiles/TestProject.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/acad/Documents/CPU/main/CMakeFiles --progress-num=7,8 "Built target TestProject"
+.PHONY : CMakeFiles/TestProject.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/Project.dir/rule: cmake_check_build_system
+CMakeFiles/TestProject.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/acad/Documents/CPU/main/CMakeFiles 8
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Project.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/TestProject.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/acad/Documents/CPU/main/CMakeFiles 0
-.PHONY : CMakeFiles/Project.dir/rule
+.PHONY : CMakeFiles/TestProject.dir/rule
 
 # Convenience name for target.
-Project: CMakeFiles/Project.dir/rule
-.PHONY : Project
+TestProject: CMakeFiles/TestProject.dir/rule
+.PHONY : TestProject
 
 # clean rule for target.
-CMakeFiles/Project.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/clean
-.PHONY : CMakeFiles/Project.dir/clean
+CMakeFiles/TestProject.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestProject.dir/build.make CMakeFiles/TestProject.dir/clean
+.PHONY : CMakeFiles/TestProject.dir/clean
 
 #=============================================================================
 # Target rules for target src/CMakeFiles/Functions.dir

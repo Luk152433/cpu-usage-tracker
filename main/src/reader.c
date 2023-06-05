@@ -5,6 +5,10 @@
 
 Reader* readerCreate(char* path)
     {
+        if(path==NULL){
+            return NULL;
+        }
+
         Reader* reader = (Reader*)malloc(sizeof(*reader));
         reader->path=path;
 
@@ -13,8 +17,15 @@ Reader* readerCreate(char* path)
     }
 
 Reader* readerOpenSourceFile(Reader* reader)
-    {
+    {   
+        if(reader==NULL){
+            return NULL;
+        }
+
         reader->f=fopen(reader->path,"r");
+        if(reader->f==NULL){
+            return NULL;
+        }
 
         return reader;
     }
@@ -22,6 +33,9 @@ Reader* readerOpenSourceFile(Reader* reader)
     {  
         fclose(reader->f);
         reader->f=fopen(reader->path,"r");
+        // if(reader->f==NULL){
+        //     return;
+        // }
 
         return;
     }
@@ -31,7 +45,9 @@ char*    readerReadSourceFile(const Reader* reader,coreSize* coresize)
         
         char*const line=(char*)malloc(sizeof(char)*(coresize->amountSign)*(coresize->coresNumber+1));
         char*const allSign=(char*)malloc(sizeof(char)*(coresize->amountSign)*(coresize->coresNumber+1));
-        
+        if(line==NULL || allSign==NULL){
+            return NULL;
+        }
         int countLoop=0;
         while (countLoop<=(coresize->coresNumber))
         {  
@@ -51,13 +67,17 @@ char*    readerReadSourceFile(const Reader* reader,coreSize* coresize)
     }    
 
 uint8_t readerCloseSourceFile(const Reader* reader)
-    {   
+    {     
+        if(reader==NULL){
+            return 1;
+        }
+        
       
         return fclose(reader->f);
     } 
 
 void    readerDestroy(Reader* reader)
-    {
+    {   
         
         free(reader);
     }    

@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/acad/Documents/CPU/main/CMakeFiles /home/acad/Documents/CPU/main//CMakeFiles/progress.marks
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
+	cd /home/acad/Documents/CPU/main && $(CMAKE_COMMAND) -E cmake_progress_start /home/acad/Documents/CPU/main/CMakeFiles /home/acad/Documents/CPU/main/test//CMakeFiles/progress.marks
+	cd /home/acad/Documents/CPU/main && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/acad/Documents/CPU/main/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clean
+	cd /home/acad/Documents/CPU/main && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,68 +103,18 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /home/acad/Documents/CPU/main && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /home/acad/Documents/CPU/main && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/acad/Documents/CPU/main && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
-
-#=============================================================================
-# Target rules for targets named TestProject
-
-# Build rule for target.
-TestProject: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 TestProject
-.PHONY : TestProject
-
-# fast build rule for target.
-TestProject/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestProject.dir/build.make CMakeFiles/TestProject.dir/build
-.PHONY : TestProject/fast
-
-#=============================================================================
-# Target rules for targets named Functions
-
-# Build rule for target.
-Functions: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Functions
-.PHONY : Functions
-
-# fast build rule for target.
-Functions/fast:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/Functions.dir/build.make src/CMakeFiles/Functions.dir/build
-.PHONY : Functions/fast
-
-test/test.o: test/test.c.o
-.PHONY : test/test.o
-
-# target to build an object file
-test/test.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestProject.dir/build.make CMakeFiles/TestProject.dir/test/test.c.o
-.PHONY : test/test.c.o
-
-test/test.i: test/test.c.i
-.PHONY : test/test.i
-
-# target to preprocess a source file
-test/test.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestProject.dir/build.make CMakeFiles/TestProject.dir/test/test.c.i
-.PHONY : test/test.c.i
-
-test/test.s: test/test.c.s
-.PHONY : test/test.s
-
-# target to generate assembly for a file
-test/test.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestProject.dir/build.make CMakeFiles/TestProject.dir/test/test.c.s
-.PHONY : test/test.c.s
 
 # Help Target
 help:
@@ -174,11 +124,6 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Functions"
-	@echo "... TestProject"
-	@echo "... test/test.o"
-	@echo "... test/test.i"
-	@echo "... test/test.s"
 .PHONY : help
 
 
@@ -190,6 +135,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/acad/Documents/CPU/main && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

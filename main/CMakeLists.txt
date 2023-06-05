@@ -1,7 +1,13 @@
 cmake_minimum_required(VERSION 3.15)
 
-project(Project VERSION 1.0)
 
+option(TestOption "TestOption" OFF)
+if(TestOption MATCHES OFF)
+project(Project VERSION 1.0)
+endif()
+if(TestOption MATCHES ON)
+project(TestProject VERSION 1.0)
+endif()
 #set(CMAKE_C_COMPILER "$ENV{CC}")
 #message(STATUS ${CMAKE_CXX_COMPILER_ID})
 #if($ENV{CC} MATCHES /usr/bin/clang)
@@ -44,6 +50,7 @@ endif()
 target_compile_options(compiler_flags INTERFACE ${C_FLAGS}
 )
 
+if(TestOption MATCHES OFF)
 add_subdirectory(src)
 
 add_executable(Project main.c)
@@ -53,3 +60,14 @@ target_link_libraries(Project PUBLIC Functions compiler_flags)
 target_include_directories(Project PUBLIC
                             "${PROJECT_BINARY_DIR}"
                             )
+                                                   
+endif()
+if(TestOption MATCHES ON)
+    add_subdirectory(src)   
+    add_subdirectory(test)  
+    add_executable(TestProject ./test/test.c)
+    target_link_libraries(TestProject PUBLIC  Functions compiler_flags)                                           
+    target_include_directories(TestProject PUBLIC
+                          "${PROJECT_BINARY_DIR}"
+    )
+    endif()
