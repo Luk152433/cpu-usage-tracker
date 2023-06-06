@@ -8,6 +8,7 @@ project has reader, analyzer, pinter and unit test for reader.
  cmake . -DCMAKE_C_COMPILER=gcc     or    -DCMAKE_C_COMPILER=clang
  
  cmake --build .
+ 
  ./Project
  
  
