@@ -3,6 +3,7 @@
 
 src/CMakeFiles/Functions.dir/analyzer.c.o
  /home/acad/Documents/CPU/main/src/analyzer.c
+ /usr/include/stdc-predef.h
  /home/acad/Documents/CPU/main/include/header.h
  /usr/include/stdlib.h
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h
@@ -10,19 +11,18 @@ src/CMakeFiles/Functions.dir/analyzer.c.o
  /usr/include/features-time64.h
  /usr/include/x86_64-linux-gnu/bits/wordsize.h
  /usr/include/x86_64-linux-gnu/bits/timesize.h
- /usr/include/stdc-predef.h
  /usr/include/x86_64-linux-gnu/sys/cdefs.h
  /usr/include/x86_64-linux-gnu/bits/long-double.h
  /usr/include/x86_64-linux-gnu/gnu/stubs.h
  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h
- /usr/lib/llvm-14/lib/clang/14.0.0/include/stddef.h
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h
  /usr/include/x86_64-linux-gnu/bits/waitflags.h
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h
  /usr/include/x86_64-linux-gnu/bits/floatn.h
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h
  /usr/include/stdio.h
- /usr/lib/llvm-14/lib/clang/14.0.0/include/stdarg.h
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h
  /usr/include/x86_64-linux-gnu/bits/types.h
  /usr/include/x86_64-linux-gnu/bits/typesizes.h
  /usr/include/x86_64-linux-gnu/bits/time64.h
@@ -33,7 +33,7 @@ src/CMakeFiles/Functions.dir/analyzer.c.o
  /usr/include/x86_64-linux-gnu/bits/types/FILE.h
  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h
- /usr/lib/llvm-14/lib/clang/14.0.0/include/stdint.h
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h
  /usr/include/stdint.h
  /usr/include/x86_64-linux-gnu/bits/wchar.h
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h
@@ -95,10 +95,12 @@ src/CMakeFiles/Functions.dir/analyzer.c.o
  /home/acad/Documents/CPU/main/include/buffer.h
  /home/acad/Documents/CPU/main/include/printer.h
  /home/acad/Documents/CPU/main/include/reader.h
+ /home/acad/Documents/CPU/main/include/header.h
  /home/acad/Documents/CPU/main/include/thread.h
 
 src/CMakeFiles/Functions.dir/buffer.c.o
  /home/acad/Documents/CPU/main/src/buffer.c
+ /usr/include/stdc-predef.h
  /home/acad/Documents/CPU/main/include/header.h
  /usr/include/stdlib.h
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h
@@ -106,19 +108,18 @@ src/CMakeFiles/Functions.dir/buffer.c.o
  /usr/include/features-time64.h
  /usr/include/x86_64-linux-gnu/bits/wordsize.h
  /usr/include/x86_64-linux-gnu/bits/timesize.h
- /usr/include/stdc-predef.h
  /usr/include/x86_64-linux-gnu/sys/cdefs.h
  /usr/include/x86_64-linux-gnu/bits/long-double.h
  /usr/include/x86_64-linux-gnu/gnu/stubs.h
  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h
- /usr/lib/llvm-14/lib/clang/14.0.0/include/stddef.h
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h
  /usr/include/x86_64-linux-gnu/bits/waitflags.h
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h
  /usr/include/x86_64-linux-gnu/bits/floatn.h
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h
  /usr/include/stdio.h
- /usr/lib/llvm-14/lib/clang/14.0.0/include/stdarg.h
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h
  /usr/include/x86_64-linux-gnu/bits/types.h
  /usr/include/x86_64-linux-gnu/bits/typesizes.h
  /usr/include/x86_64-linux-gnu/bits/time64.h
@@ -129,7 +130,7 @@ src/CMakeFiles/Functions.dir/buffer.c.o
  /usr/include/x86_64-linux-gnu/bits/types/FILE.h
  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h
- /usr/lib/llvm-14/lib/clang/14.0.0/include/stdint.h
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h
  /usr/include/stdint.h
  /usr/include/x86_64-linux-gnu/bits/wchar.h
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h
@@ -191,10 +192,12 @@ src/CMakeFiles/Functions.dir/buffer.c.o
  /home/acad/Documents/CPU/main/include/buffer.h
  /home/acad/Documents/CPU/main/include/printer.h
  /home/acad/Documents/CPU/main/include/reader.h
+ /home/acad/Documents/CPU/main/include/header.h
  /home/acad/Documents/CPU/main/include/thread.h
 
 src/CMakeFiles/Functions.dir/printer.c.o
  /home/acad/Documents/CPU/main/src/printer.c
+ /usr/include/stdc-predef.h
  /home/acad/Documents/CPU/main/include/header.h
  /usr/include/stdlib.h
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h
@@ -202,19 +205,18 @@ src/CMakeFiles/Functions.dir/printer.c.o
  /usr/include/features-time64.h
  /usr/include/x86_64-linux-gnu/bits/wordsize.h
  /usr/include/x86_64-linux-gnu/bits/timesize.h
- /usr/include/stdc-predef.h
  /usr/include/x86_64-linux-gnu/sys/cdefs.h
  /usr/include/x86_64-linux-gnu/bits/long-double.h
  /usr/include/x86_64-linux-gnu/gnu/stubs.h
  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h
- /usr/lib/llvm-14/lib/clang/14.0.0/include/stddef.h
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h
  /usr/include/x86_64-linux-gnu/bits/waitflags.h
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h
  /usr/include/x86_64-linux-gnu/bits/floatn.h
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h
  /usr/include/stdio.h
- /usr/lib/llvm-14/lib/clang/14.0.0/include/stdarg.h
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h
  /usr/include/x86_64-linux-gnu/bits/types.h
  /usr/include/x86_64-linux-gnu/bits/typesizes.h
  /usr/include/x86_64-linux-gnu/bits/time64.h
@@ -225,7 +227,7 @@ src/CMakeFiles/Functions.dir/printer.c.o
  /usr/include/x86_64-linux-gnu/bits/types/FILE.h
  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h
- /usr/lib/llvm-14/lib/clang/14.0.0/include/stdint.h
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h
  /usr/include/stdint.h
  /usr/include/x86_64-linux-gnu/bits/wchar.h
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h
@@ -287,10 +289,12 @@ src/CMakeFiles/Functions.dir/printer.c.o
  /home/acad/Documents/CPU/main/include/buffer.h
  /home/acad/Documents/CPU/main/include/printer.h
  /home/acad/Documents/CPU/main/include/reader.h
+ /home/acad/Documents/CPU/main/include/header.h
  /home/acad/Documents/CPU/main/include/thread.h
 
 src/CMakeFiles/Functions.dir/reader.c.o
  /home/acad/Documents/CPU/main/src/reader.c
+ /usr/include/stdc-predef.h
  /home/acad/Documents/CPU/main/include/header.h
  /usr/include/stdlib.h
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h
@@ -298,19 +302,18 @@ src/CMakeFiles/Functions.dir/reader.c.o
  /usr/include/features-time64.h
  /usr/include/x86_64-linux-gnu/bits/wordsize.h
  /usr/include/x86_64-linux-gnu/bits/timesize.h
- /usr/include/stdc-predef.h
  /usr/include/x86_64-linux-gnu/sys/cdefs.h
  /usr/include/x86_64-linux-gnu/bits/long-double.h
  /usr/include/x86_64-linux-gnu/gnu/stubs.h
  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h
- /usr/lib/llvm-14/lib/clang/14.0.0/include/stddef.h
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h
  /usr/include/x86_64-linux-gnu/bits/waitflags.h
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h
  /usr/include/x86_64-linux-gnu/bits/floatn.h
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h
  /usr/include/stdio.h
- /usr/lib/llvm-14/lib/clang/14.0.0/include/stdarg.h
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h
  /usr/include/x86_64-linux-gnu/bits/types.h
  /usr/include/x86_64-linux-gnu/bits/typesizes.h
  /usr/include/x86_64-linux-gnu/bits/time64.h
@@ -321,7 +324,7 @@ src/CMakeFiles/Functions.dir/reader.c.o
  /usr/include/x86_64-linux-gnu/bits/types/FILE.h
  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h
- /usr/lib/llvm-14/lib/clang/14.0.0/include/stdint.h
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h
  /usr/include/stdint.h
  /usr/include/x86_64-linux-gnu/bits/wchar.h
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h
@@ -383,10 +386,12 @@ src/CMakeFiles/Functions.dir/reader.c.o
  /home/acad/Documents/CPU/main/include/buffer.h
  /home/acad/Documents/CPU/main/include/printer.h
  /home/acad/Documents/CPU/main/include/reader.h
+ /home/acad/Documents/CPU/main/include/header.h
  /home/acad/Documents/CPU/main/include/thread.h
 
 src/CMakeFiles/Functions.dir/thread.c.o
  /home/acad/Documents/CPU/main/src/thread.c
+ /usr/include/stdc-predef.h
  /home/acad/Documents/CPU/main/include/header.h
  /usr/include/stdlib.h
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h
@@ -394,19 +399,18 @@ src/CMakeFiles/Functions.dir/thread.c.o
  /usr/include/features-time64.h
  /usr/include/x86_64-linux-gnu/bits/wordsize.h
  /usr/include/x86_64-linux-gnu/bits/timesize.h
- /usr/include/stdc-predef.h
  /usr/include/x86_64-linux-gnu/sys/cdefs.h
  /usr/include/x86_64-linux-gnu/bits/long-double.h
  /usr/include/x86_64-linux-gnu/gnu/stubs.h
  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h
- /usr/lib/llvm-14/lib/clang/14.0.0/include/stddef.h
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h
  /usr/include/x86_64-linux-gnu/bits/waitflags.h
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h
  /usr/include/x86_64-linux-gnu/bits/floatn.h
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h
  /usr/include/stdio.h
- /usr/lib/llvm-14/lib/clang/14.0.0/include/stdarg.h
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h
  /usr/include/x86_64-linux-gnu/bits/types.h
  /usr/include/x86_64-linux-gnu/bits/typesizes.h
  /usr/include/x86_64-linux-gnu/bits/time64.h
@@ -417,7 +421,7 @@ src/CMakeFiles/Functions.dir/thread.c.o
  /usr/include/x86_64-linux-gnu/bits/types/FILE.h
  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h
- /usr/lib/llvm-14/lib/clang/14.0.0/include/stdint.h
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h
  /usr/include/stdint.h
  /usr/include/x86_64-linux-gnu/bits/wchar.h
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h
@@ -479,5 +483,6 @@ src/CMakeFiles/Functions.dir/thread.c.o
  /home/acad/Documents/CPU/main/include/buffer.h
  /home/acad/Documents/CPU/main/include/printer.h
  /home/acad/Documents/CPU/main/include/reader.h
+ /home/acad/Documents/CPU/main/include/header.h
  /home/acad/Documents/CPU/main/include/thread.h
 
