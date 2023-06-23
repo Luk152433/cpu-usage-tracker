@@ -1,9 +1,9 @@
 //#include "analyzer.h"
 #include "header.h"
 
-ProcDate* analyzerCreate(coreSize* coresize){
+ProcDate* analyzerCreate(coreSize*const coresize){
  
-    ProcDate* procDate=(ProcDate*)malloc(sizeof(*procDate)*(coresize->coresNumber+1));
+    ProcDate*const procDate=(ProcDate*const)malloc(sizeof(*procDate)*(coresize->coresNumber+1));
     for(int i=0;i<=coresize->coresNumber;i++){
     *procDate[i].name=1;
     procDate[i].user=1;
@@ -22,9 +22,9 @@ ProcDate* analyzerCreate(coreSize* coresize){
 
 }
 
-double* analyzerCountRate(ProcDate* procDate,ProcDate* procDatePreviue,coreSize* coresize){
+double* analyzerCountRate(ProcDate*const procDate,ProcDate*const procDatePreviue,const coreSize*const coresize){
 
-    double* allPercentValue=malloc(sizeof(double)*(coresize->coresNumber+1));
+    double*const allPercentValue=(double*const)malloc(sizeof(double)*(coresize->coresNumber+1));
       
     for(int i=0;i<=coresize->coresNumber;i++)
     {
@@ -48,7 +48,7 @@ double* analyzerCountRate(ProcDate* procDate,ProcDate* procDatePreviue,coreSize*
     return allPercentValue;
 }
 
-void analyzerDestroy(ProcDate* procDate,ProcDate* procDatePreviue){
+void analyzerDestroy(ProcDate*const procDate,ProcDate*const procDatePreviue){
 
     free(procDate);
     free(procDatePreviue);

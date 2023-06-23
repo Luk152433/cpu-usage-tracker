@@ -17,9 +17,9 @@ typedef struct ProcDate {
 	
 }ProcDate;
 
-ProcDate* analyzerCreate(coreSize* coresize);
-double* analyzerCountRate(ProcDate* procDate,ProcDate* procDatePreviue,coreSize* coresize);
-void analyzerDestroy(ProcDate* procDate,ProcDate* procDatePreviue);
+ProcDate* analyzerCreate(coreSize*const coresize);
+double* analyzerCountRate(ProcDate*const procDate,ProcDate*const procDatePreviue,const coreSize*const coresize);
+void analyzerDestroy(ProcDate*const procDate,ProcDate*const procDatePreviue);
 
 
 #endif 

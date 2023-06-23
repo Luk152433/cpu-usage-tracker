@@ -8,9 +8,9 @@ typedef struct StoragePrinter
     
 }StoragePrinter;
 
-StoragePrinter* printerCreate(coreSize* coresize);
-void printerDisplay(StoragePrinter* storageprinter);
-void printerDestroy(StoragePrinter* storageprinter);
+StoragePrinter* printerCreate(const coreSize*const coresize);
+void printerDisplay(const StoragePrinter*const storageprinter);
+void printerDestroy(StoragePrinter*const storageprinter);
 
 #endif 
 

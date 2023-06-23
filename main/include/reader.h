@@ -11,12 +11,12 @@ typedef struct Reader
 
 
 
-Reader* readerCreate(char* path);
-Reader* readerOpenSourceFile(Reader* reader);
-void    readerReOpenSourceFile(Reader* reader);
-char*   readerReadSourceFile(const Reader* reader,coreSize* coresize);
-uint8_t readerCloseSourceFile(const Reader* reader);
-void    readerDestroy(Reader* reader);
+Reader* readerCreate(char*const path);
+Reader* readerOpenSourceFile(Reader*const reader);
+void    readerReOpenSourceFile(Reader*const reader);
+char*   readerReadSourceFile(const Reader*const reader,const coreSize*const coresize);
+uint8_t readerCloseSourceFile(const Reader*const reader);
+void    readerDestroy(Reader*const reader);
 
 #endif 
 

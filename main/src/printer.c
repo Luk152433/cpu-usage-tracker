@@ -1,23 +1,23 @@
 //#include "printer.h"
 #include "header.h"
 
-StoragePrinter* printerCreate(coreSize* coresize){
+StoragePrinter* printerCreate(const coreSize*const coresize){
 
-    StoragePrinter* storagePrinter=(StoragePrinter*)malloc(sizeof(*storagePrinter));
+    StoragePrinter*const storagePrinter=(StoragePrinter*const)malloc(sizeof(*storagePrinter));
     storagePrinter->allRateValue=(double*)malloc(sizeof(double)*(coresize->coresNumber+1));
     storagePrinter->numberLevels=(coresize->coresNumber+1);
 
     return storagePrinter;
 }
 
-void printerDestroy(StoragePrinter* storageprinter){
+void printerDestroy( StoragePrinter*const storageprinter){
 
     free(storageprinter->allRateValue);
     free(storageprinter);
 
 }
 
-void printerDisplay(StoragePrinter* storageprinter){
+void printerDisplay(const StoragePrinter*const storageprinter){
 
     for(int i=0;i<storageprinter->numberLevels;i++)
     {

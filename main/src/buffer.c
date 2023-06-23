@@ -2,9 +2,9 @@
 #include "header.h"
 
 
-BufferCircularBuf* bufferCreate(coreSize* coresize,int numbers_of_buffer )
+BufferCircularBuf* bufferCreate(const coreSize*const coresize,const int numbers_of_buffer )
 {
-    BufferCircularBuf* bufferCircularBuf=(BufferCircularBuf*)malloc(sizeof(*bufferCircularBuf));
+    BufferCircularBuf*const bufferCircularBuf=(BufferCircularBuf*const)malloc(sizeof(*bufferCircularBuf));
     bufferCircularBuf->buffer=(char*)malloc(sizeof(char)*(coresize->amountSign)*(coresize->coresNumber+1)*numbers_of_buffer);
      bufferCircularBuf->courentFillBuffer=0;
      bufferCircularBuf->head=0;
@@ -14,7 +14,7 @@ BufferCircularBuf* bufferCreate(coreSize* coresize,int numbers_of_buffer )
 
     return bufferCircularBuf;
 }
-void bufferCheckEmptyBuf(BufferCircularBuf* bufferCircularBuf)
+void bufferCheckEmptyBuf(const BufferCircularBuf*const bufferCircularBuf)
 {
     if(bufferCircularBuf->courentFillBuffer==bufferCircularBuf->maxSize)
     {
@@ -22,7 +22,7 @@ void bufferCheckEmptyBuf(BufferCircularBuf* bufferCircularBuf)
     }
 }
 
-void bufferCheckFillBuf(BufferCircularBuf* bufferCircularBuf)
+void bufferCheckFillBuf(const BufferCircularBuf*const bufferCircularBuf)
 {
     if(bufferCircularBuf->courentFillBuffer==0)
     {
@@ -30,7 +30,7 @@ void bufferCheckFillBuf(BufferCircularBuf* bufferCircularBuf)
     }
 }
 
-void bufferSetValue(BufferCircularBuf* bufferCircularBuf,char* wskSource)
+void bufferSetValue(BufferCircularBuf*const bufferCircularBuf,char*const wskSource)
 {
     
     memcpy(&bufferCircularBuf->buffer[(bufferCircularBuf->head)*(bufferCircularBuf->sizeOnePacket)],wskSource,bufferCircularBuf->sizeOnePacket);
@@ -42,9 +42,9 @@ void bufferSetValue(BufferCircularBuf* bufferCircularBuf,char* wskSource)
         bufferCircularBuf->head=0;
     }
 }
-char* bufferGetValue(BufferCircularBuf* bufferCircularBuf)
+char* bufferGetValue(BufferCircularBuf*const bufferCircularBuf)
 {
-    char* outBufferVal=malloc(bufferCircularBuf->sizeOnePacket);
+    char*const outBufferVal=(char*const)malloc(bufferCircularBuf->sizeOnePacket);
     *outBufferVal='0';
     memcpy(outBufferVal,&bufferCircularBuf->buffer[(bufferCircularBuf->tail)*(bufferCircularBuf->sizeOnePacket)],bufferCircularBuf->sizeOnePacket);
     (bufferCircularBuf->courentFillBuffer)--;
@@ -57,7 +57,7 @@ char* bufferGetValue(BufferCircularBuf* bufferCircularBuf)
     return outBufferVal;
 }
 
-void bufferDestroy(BufferCircularBuf* bufferCircularBuf)
+void bufferDestroy(BufferCircularBuf*const bufferCircularBuf)
 {   
     
     free(bufferCircularBuf->buffer);

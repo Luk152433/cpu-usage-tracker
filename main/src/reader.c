@@ -3,20 +3,20 @@
 //#include "reader.h"
 #include "header.h"
 
-Reader* readerCreate(char* path)
+Reader* readerCreate(char*const path)
     {
         if(path==NULL){
             return NULL;
         }
 
-        Reader* reader = (Reader*)malloc(sizeof(*reader));
+        Reader*const reader = (Reader*const)malloc(sizeof(*reader));
         reader->path=path;
 
         
         return reader;
     }
 
-Reader* readerOpenSourceFile(Reader* reader)
+Reader* readerOpenSourceFile(Reader*const reader)
     {   
         if(reader==NULL){
             return NULL;
@@ -29,7 +29,7 @@ Reader* readerOpenSourceFile(Reader* reader)
 
         return reader;
     }
-    void readerReOpenSourceFile(Reader* reader)
+    void readerReOpenSourceFile(Reader*const reader)
     {  
         fclose(reader->f);
         reader->f=fopen(reader->path,"r");
@@ -37,7 +37,7 @@ Reader* readerOpenSourceFile(Reader* reader)
         return;
     }
 
-    char* readerReadSourceFile(const Reader* reader,coreSize* coresize)
+    char* readerReadSourceFile(const Reader*const reader,const coreSize*const coresize)
     {
         
         char*const line=(char*)malloc(sizeof(char)*(coresize->amountSign)*(coresize->coresNumber+1));
@@ -63,7 +63,7 @@ Reader* readerOpenSourceFile(Reader* reader)
         return allSign;
     }    
 
-    uint8_t readerCloseSourceFile(const Reader* reader)
+    uint8_t readerCloseSourceFile(const Reader*const reader)
     {     
         if(reader==NULL){
             return 1;
@@ -72,7 +72,7 @@ Reader* readerOpenSourceFile(Reader* reader)
         return fclose(reader->f);
     } 
 
-    void    readerDestroy(Reader* reader)
+    void    readerDestroy(Reader*const reader)
     {   
         free(reader);
     }    
