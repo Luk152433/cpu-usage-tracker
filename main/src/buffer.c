@@ -4,6 +4,13 @@
 
 BufferCircularBuf* bufferCreate(const coreSize*const coresize,const int numbers_of_buffer )
 {
+    if(coresize==NULL || numbers_of_buffer==NULL){
+        return NULL;
+    }
+    if(coresize->amountSign==0 || coresize->coresNumber==0){
+        return NULL;
+    }
+
     BufferCircularBuf*const bufferCircularBuf=(BufferCircularBuf*const)malloc(sizeof(*bufferCircularBuf));
     bufferCircularBuf->buffer=(char*)malloc(sizeof(char)*(coresize->amountSign)*(coresize->coresNumber+1)*numbers_of_buffer);
      bufferCircularBuf->courentFillBuffer=0;
@@ -11,6 +18,10 @@ BufferCircularBuf* bufferCreate(const coreSize*const coresize,const int numbers_
      bufferCircularBuf->tail=0;
      bufferCircularBuf->maxSize=numbers_of_buffer;
      bufferCircularBuf->sizeOnePacket=(sizeof(char)*(coresize->amountSign)*(coresize->coresNumber+1));
+
+    if(bufferCircularBuf==NULL || bufferCircularBuf->buffer==NULL){
+        return NULL;
+    }
 
     return bufferCircularBuf;
 }
@@ -32,7 +43,9 @@ void bufferCheckFillBuf(const BufferCircularBuf*const bufferCircularBuf)
 
 void bufferSetValue(BufferCircularBuf*const bufferCircularBuf,char*const wskSource)
 {
-    
+    if(bufferCircularBuf==NULL || wskSource==NULL){
+        return ;
+    }
     memcpy(&bufferCircularBuf->buffer[(bufferCircularBuf->head)*(bufferCircularBuf->sizeOnePacket)],wskSource,bufferCircularBuf->sizeOnePacket);
    
    (bufferCircularBuf->courentFillBuffer)++;
@@ -44,6 +57,10 @@ void bufferSetValue(BufferCircularBuf*const bufferCircularBuf,char*const wskSour
 }
 char* bufferGetValue(BufferCircularBuf*const bufferCircularBuf)
 {
+    if(bufferCircularBuf==NULL){
+        return NULL;
+    }
+
     char*const outBufferVal=(char*const)malloc(bufferCircularBuf->sizeOnePacket);
     *outBufferVal='0';
     memcpy(outBufferVal,&bufferCircularBuf->buffer[(bufferCircularBuf->tail)*(bufferCircularBuf->sizeOnePacket)],bufferCircularBuf->sizeOnePacket);
@@ -54,11 +71,18 @@ char* bufferGetValue(BufferCircularBuf*const bufferCircularBuf)
         bufferCircularBuf->tail=0;
     }
 
+    if(outBufferVal==NULL){
+        return NULL;
+    }
+
     return outBufferVal;
 }
 
 void bufferDestroy(BufferCircularBuf*const bufferCircularBuf)
 {   
+    if(bufferCircularBuf==NULL){
+        return;
+    }
     
     free(bufferCircularBuf->buffer);
     free(bufferCircularBuf);
