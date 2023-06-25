@@ -4,7 +4,7 @@
 
 BufferCircularBuf* bufferCreate(const coreSize*const coresize,const int numbers_of_buffer )
 {
-    if(coresize==NULL || numbers_of_buffer==NULL){
+    if(coresize==NULL || numbers_of_buffer==0){
         return NULL;
     }
     if(coresize->amountSign==0 || coresize->coresNumber==0){
