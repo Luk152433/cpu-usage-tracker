@@ -25,20 +25,24 @@ BufferCircularBuf* bufferCreate(const coreSize*const coresize,const int numbers_
 
     return bufferCircularBuf;
 }
-void bufferCheckEmptyBuf(const BufferCircularBuf*const bufferCircularBuf)
+bool bufferCheckEmptyBuf(const BufferCircularBuf*const bufferCircularBuf)
 {
     if(bufferCircularBuf->courentFillBuffer==bufferCircularBuf->maxSize)
     {
         printf("Buffer is full!");
+        return 0;
     }
+    return 1;
 }
 
-void bufferCheckFillBuf(const BufferCircularBuf*const bufferCircularBuf)
+bool bufferCheckFillBuf(const BufferCircularBuf*const bufferCircularBuf)
 {
     if(bufferCircularBuf->courentFillBuffer==0)
     {
         printf("Buffer is empty!");
+        return 0;
     }
+    return 1;
 }
 
 void bufferSetValue(BufferCircularBuf*const bufferCircularBuf,char*const wskSource)

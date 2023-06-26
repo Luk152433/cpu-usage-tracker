@@ -51,6 +51,7 @@ void testBufferSetValue(void)
     
     char MwskSource='A';
     bufferSetValue(buffer, &MwskSource);
+    assert(bufferCheckFillBuf(buffer));
 
 
 
@@ -58,4 +59,43 @@ void testBufferSetValue(void)
     free(MCoreSize);
     
 
-}    
+}
+
+void testBufferGetValue(void);
+void testBufferGetValue(void)
+{   
+   
+    coreSize*const MCoreSize=(coreSize*)malloc(sizeof(*MCoreSize));
+    MCoreSize->amountSign=1;
+    MCoreSize->coresNumber=1;
+    u_int8_t Mnumbers_of_buffer=1;
+    BufferCircularBuf* buffer=bufferCreate(MCoreSize, Mnumbers_of_buffer );
+    assert(buffer!=NULL);
+
+    assert(!bufferCheckFillBuf(buffer));
+    
+    char MwskSource='A';
+    bufferSetValue(buffer, &MwskSource);
+    assert(bufferCheckFillBuf(buffer));
+
+    assert(!bufferCheckEmptyBuf(buffer));
+
+    char* wskGetValue=bufferGetValue(buffer);
+    assert(wskGetValue!=NULL);
+    assert(bufferCheckEmptyBuf(buffer));
+
+
+    bufferDestroy(buffer);
+    free(MCoreSize);
+    free(wskGetValue);
+    
+
+} 
+
+void testBuffer(void);
+void testBuffer(void)
+{
+    testBufferCreate();
+    testBufferSetValue();
+    testBufferGetValue();
+}

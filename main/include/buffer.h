@@ -5,8 +5,8 @@ BufferCircularBuf* bufferCreate(const coreSize*const coresize,const int numbers_
 char* bufferGetValue(BufferCircularBuf*const bufferCircularBuf);
 void bufferSetValue(BufferCircularBuf*const bufferCircularBuf,char*const wskSource);
 void bufferDestroy(BufferCircularBuf*const BufferCircularBuf);
-void bufferCheckEmptyBuf(const BufferCircularBuf*const bufferCircularBuf);
-void bufferCheckFillBuf(const BufferCircularBuf* bufferCircularBuf);
+bool bufferCheckEmptyBuf(const BufferCircularBuf*const bufferCircularBuf);
+bool bufferCheckFillBuf(const BufferCircularBuf* bufferCircularBuf);
 
 #endif  
 
