@@ -49,6 +49,7 @@ void testBufferSetValue(void)
     BufferCircularBuf* buffer=bufferCreate(MCoreSize, Mnumbers_of_buffer );
     assert(buffer!=NULL);
     
+    assert(!bufferCheckFillBuf(buffer));
     char MwskSource='A';
     bufferSetValue(buffer, &MwskSource);
     assert(bufferCheckFillBuf(buffer));
