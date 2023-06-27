@@ -103,12 +103,12 @@ void bufferProducerReleased( mutexSema*const producerSync)
     sem_post(&producerSync->semFullBuffer);
 }
 
-void bufferConsmuerWaitToSetUp( mutexSema*const producerSync)
+void bufferConsmuerWaitToSetUp( mutexSema*const consumerSync)
 {
-    sem_wait(&producerSync->semFullBuffer);
+    sem_wait(&consumerSync->semFullBuffer);
 }
 
-void bufferConsmuerReleased( mutexSema*const producerSync)
+void bufferConsmuerReleased( mutexSema*const consumerSync)
 {
-    sem_post(&producerSync->semEmptyBuffer);
+    sem_post(&consumerSync->semEmptyBuffer);
 }

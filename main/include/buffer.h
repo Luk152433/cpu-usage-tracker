@@ -9,8 +9,8 @@ bool bufferCheckEmptyBuf(const BufferCircularBuf*const bufferCircularBuf);
 bool bufferCheckFillBuf(const BufferCircularBuf* bufferCircularBuf);
 void bufferProducerWaitToSetUp( mutexSema*const producerSync);
 void bufferProducerReleased( mutexSema*const producerSync);
-void bufferConsmuerWaitToSetUp( mutexSema*const producerSync);
-void bufferConsmuerReleased( mutexSema*const producerSync);
+void bufferConsmuerWaitToSetUp( mutexSema*const consumerSync);
+void bufferConsmuerReleased( mutexSema*const consumerSync);
 
 #endif  
 
