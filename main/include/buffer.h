@@ -7,6 +7,10 @@ void bufferSetValue(BufferCircularBuf*const bufferCircularBuf,char*const wskSour
 void bufferDestroy(BufferCircularBuf*const BufferCircularBuf);
 bool bufferCheckEmptyBuf(const BufferCircularBuf*const bufferCircularBuf);
 bool bufferCheckFillBuf(const BufferCircularBuf* bufferCircularBuf);
+void bufferProducerWaitToSetUp( mutexSema*const producerSync);
+void bufferProducerReleased( mutexSema*const producerSync);
+void bufferConsmuerWaitToSetUp( mutexSema*const producerSync);
+void bufferConsmuerReleased( mutexSema*const producerSync);
 
 #endif  
 

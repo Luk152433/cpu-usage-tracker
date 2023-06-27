@@ -28,7 +28,13 @@ typedef struct BufferCircularBuf {
 	pthread_mutex_t mutex; 	
 }BufferCircularBuf;
 
+typedef struct mutexSema
+    {
+        pthread_mutex_t mtx;
+        sem_t semEmptyBuffer;
+        sem_t semFullBuffer;
 
+    }mutexSema;
 
 
 #define THREADS_NUM 5

@@ -93,3 +93,22 @@ void bufferDestroy(BufferCircularBuf*const bufferCircularBuf)
 
 }
 
+void bufferProducerWaitToSetUp( mutexSema*const producerSync)
+{
+    sem_wait(&producerSync->semEmptyBuffer);
+}
+
+void bufferProducerReleased( mutexSema*const producerSync)
+{
+    sem_post(&producerSync->semFullBuffer);
+}
+
+void bufferConsmuerWaitToSetUp( mutexSema*const producerSync)
+{
+    sem_wait(&producerSync->semFullBuffer);
+}
+
+void bufferConsmuerReleased( mutexSema*const producerSync)
+{
+    sem_post(&producerSync->semEmptyBuffer);
+}

@@ -3,18 +3,12 @@
 static coreSize*  coreSizeV;
 static coreSize*  analizerSizeV;
 
-typedef struct mutexSema
-    {
-        pthread_mutex_t mtx;
-        sem_t semEmptyBuffer;
-        sem_t semFullBuffer;
 
-    }mutexSema;
 
 static BufferCircularBuf* readAnalyzerBuff,*analyzerPrinterBuff;
 static pthread_t threadTab[THREADS_NUM];
-static mutexSema readAnalyzerSync;
-static mutexSema analyzerPrinterSync;
+static mutexSema* readAnalyzerSync;
+static mutexSema* analyzerPrinterSync;
 
 void prepareVariable(void);
 void  setThread(void);
@@ -33,13 +27,13 @@ void signal_exit(const int32_t signum)
         pthread_join(threadTab[1],NULL);
         pthread_join(threadTab[2],NULL);
 
-        sem_destroy(&readAnalyzerSync.semEmptyBuffer);
-        sem_destroy(&readAnalyzerSync.semFullBuffer);
-        sem_destroy(&analyzerPrinterSync.semEmptyBuffer);
-        sem_destroy(&analyzerPrinterSync.semFullBuffer);
+        sem_destroy(&readAnalyzerSync->semEmptyBuffer);
+        sem_destroy(&readAnalyzerSync->semFullBuffer);
+        sem_destroy(&analyzerPrinterSync->semEmptyBuffer);
+        sem_destroy(&analyzerPrinterSync->semFullBuffer);
 
-        pthread_mutex_destroy(&readAnalyzerSync.mtx);
-        pthread_mutex_destroy(&analyzerPrinterSync.mtx);
+        pthread_mutex_destroy(&readAnalyzerSync->mtx);
+        pthread_mutex_destroy(&analyzerPrinterSync->mtx);
 
     } 
 
@@ -52,7 +46,8 @@ void run()
 
 void prepareVariable()
     {   
-
+        readAnalyzerSync=(mutexSema*)malloc(sizeof(*readAnalyzerSync));
+        analyzerPrinterSync=(mutexSema*)malloc(sizeof(*analyzerPrinterSync));
         coreSizeV=(coreSize*)malloc(sizeof(*coreSizeV));
         coreSizeV->amountSign=254;
         coreSizeV->coresNumber=get_nprocs_conf();
@@ -80,13 +75,15 @@ void* readerThread(void* args)
             readerReOpenSourceFile(reader);
             char* wskReader= readerReadSourceFile(reader,coreSizeV);
 
-            sem_wait(&readAnalyzerSync.semEmptyBuffer);
-            pthread_mutex_lock(&readAnalyzerSync.mtx);
+            //sem_wait(&readAnalyzerSync->semEmptyBuffer);
+            bufferProducerWaitToSetUp(readAnalyzerSync);
+            pthread_mutex_lock(&readAnalyzerSync->mtx);
     
             bufferSetValue(readAnalyzerBuff,wskReader);
         
-            pthread_mutex_unlock(&readAnalyzerSync.mtx);
-            sem_post(&readAnalyzerSync.semFullBuffer);
+            pthread_mutex_unlock(&readAnalyzerSync->mtx);
+            //sem_post(&readAnalyzerSync->semFullBuffer);
+            bufferProducerReleased(readAnalyzerSync);
 
             free(wskReader);
             sleep(1);
@@ -111,13 +108,15 @@ void* analyzerThread(void* args)
 
     while(m<30)
         {
-            sem_wait(&readAnalyzerSync.semFullBuffer);
-            pthread_mutex_lock(&readAnalyzerSync.mtx);
+            //sem_wait(&readAnalyzerSync->semFullBuffer);
+            bufferConsmuerWaitToSetUp(readAnalyzerSync);
+            pthread_mutex_lock(&readAnalyzerSync->mtx);
     
             char* reciveAnalyzer= bufferGetValue(readAnalyzerBuff);
     
-            pthread_mutex_unlock(&readAnalyzerSync.mtx);
-            sem_post(&readAnalyzerSync.semEmptyBuffer);
+            pthread_mutex_unlock(&readAnalyzerSync->mtx);
+            bufferConsmuerReleased(readAnalyzerSync);
+            //sem_post(&readAnalyzerSync->semEmptyBuffer);
     
     
 
@@ -135,16 +134,18 @@ void* analyzerThread(void* args)
     
 
    
-            sem_wait(&analyzerPrinterSync.semEmptyBuffer);
-            pthread_mutex_lock(&analyzerPrinterSync.mtx);
+            //sem_wait(&analyzerPrinterSync.semEmptyBuffer);
+            bufferProducerWaitToSetUp(analyzerPrinterSync);
+            pthread_mutex_lock(&analyzerPrinterSync->mtx);
      
 
             char* temp=(char*)malloc(sizeof(double)*(coreSizeV->coresNumber+1));
             memcpy(temp,allPrec,sizeof(double)*(coreSizeV->coresNumber+1));
             bufferSetValue(analyzerPrinterBuff,temp);
     
-            pthread_mutex_unlock(&analyzerPrinterSync.mtx);
-            sem_post(&analyzerPrinterSync.semFullBuffer);
+            pthread_mutex_unlock(&analyzerPrinterSync->mtx);
+            //sem_post(&analyzerPrinterSync.semFullBuffer);
+            bufferProducerReleased(analyzerPrinterSync);
     
 
 
@@ -187,13 +188,15 @@ void* printerThread(void* args)
         
     while(k<30)
         {
-            sem_wait(&analyzerPrinterSync.semFullBuffer);
-            pthread_mutex_lock(&analyzerPrinterSync.mtx);
+            //sem_wait(&analyzerPrinterSync->semFullBuffer);
+            bufferConsmuerWaitToSetUp(analyzerPrinterSync);
+            pthread_mutex_lock(&analyzerPrinterSync->mtx);
     
             double* recivereader= (double*)bufferGetValue(analyzerPrinterBuff);
     
-            pthread_mutex_unlock(&analyzerPrinterSync.mtx);
-            sem_post(&analyzerPrinterSync.semEmptyBuffer);
+            pthread_mutex_unlock(&analyzerPrinterSync->mtx);
+            bufferConsmuerReleased(analyzerPrinterSync);
+            //sem_post(&analyzerPrinterSync->semEmptyBuffer);
             
             memcpy(storagePrinter->allRateValue,recivereader,(sizeof(double)*(coreSizeV->coresNumber+1)));
             free(recivereader);
@@ -213,13 +216,13 @@ void* printerThread(void* args)
 
 void setThread()
     {
-        pthread_mutex_init(&readAnalyzerSync.mtx,NULL);
-        pthread_mutex_init(&analyzerPrinterSync.mtx,NULL);
+        pthread_mutex_init(&readAnalyzerSync->mtx,NULL);
+        pthread_mutex_init(&analyzerPrinterSync->mtx,NULL);
 
-        sem_init(&readAnalyzerSync.semEmptyBuffer,0,10);
-        sem_init(&readAnalyzerSync.semFullBuffer,0,0);
-        sem_init(&analyzerPrinterSync.semEmptyBuffer,0,10);
-        sem_init(&analyzerPrinterSync.semFullBuffer,0,0);
+        sem_init(&readAnalyzerSync->semEmptyBuffer,0,10);
+        sem_init(&readAnalyzerSync->semFullBuffer,0,0);
+        sem_init(&analyzerPrinterSync->semEmptyBuffer,0,10);
+        sem_init(&analyzerPrinterSync->semFullBuffer,0,0);
 
         pthread_create(&threadTab[0],NULL,&readerThread,NULL);
         pthread_create(&threadTab[1],NULL,&analyzerThread,NULL);
@@ -230,16 +233,18 @@ void setThread()
         pthread_join(threadTab[1],NULL);
         pthread_join(threadTab[2],NULL);
 
-        sem_destroy(&readAnalyzerSync.semEmptyBuffer);
-        sem_destroy(&readAnalyzerSync.semFullBuffer);
-        sem_destroy(&analyzerPrinterSync.semEmptyBuffer);
-        sem_destroy(&analyzerPrinterSync.semFullBuffer);
+        sem_destroy(&readAnalyzerSync->semEmptyBuffer);
+        sem_destroy(&readAnalyzerSync->semFullBuffer);
+        sem_destroy(&analyzerPrinterSync->semEmptyBuffer);
+        sem_destroy(&analyzerPrinterSync->semFullBuffer);
 
-        pthread_mutex_destroy(&readAnalyzerSync.mtx);
-        pthread_mutex_destroy(&analyzerPrinterSync.mtx);
+        pthread_mutex_destroy(&readAnalyzerSync->mtx);
+        pthread_mutex_destroy(&analyzerPrinterSync->mtx);
 
         free(coreSizeV);
         free(analizerSizeV);
+        free(readAnalyzerSync);
+        free(analyzerPrinterSync);
 
     }
 
