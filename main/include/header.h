@@ -14,8 +14,8 @@
 
 typedef struct coreSize
 {
-    int amountSign;
-    int coresNumber;
+    uint16_t amountSign;
+    uint8_t coresNumber;
 }coreSize;
 
 typedef struct BufferCircularBuf {

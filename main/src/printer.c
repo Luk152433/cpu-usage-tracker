@@ -19,7 +19,7 @@ void printerDestroy( StoragePrinter*const storageprinter){
 
 void printerDisplay(const StoragePrinter*const storageprinter){
 
-    for(int i=0;i<storageprinter->numberLevels;i++)
+    for(u_int8_t i=0;i<storageprinter->numberLevels;i++)
     {
         if(!i)
         {

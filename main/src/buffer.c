@@ -2,7 +2,7 @@
 #include "header.h"
 
 
-BufferCircularBuf* bufferCreate(const coreSize*const coresize,const int numbers_of_buffer )
+BufferCircularBuf* bufferCreate(const coreSize*const coresize,const uint8_t numbers_of_buffer )
 {
     if(coresize==NULL || numbers_of_buffer==0){
         return NULL;

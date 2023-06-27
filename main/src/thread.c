@@ -19,7 +19,7 @@ static mutexSema analyzerPrinterSync;
 void prepareVariable(void);
 void  setThread(void);
 
-void signal_exit(const int signum) 
+void signal_exit(const int32_t signum) 
     {
   
         printf(" Signal %d end run\n", signum);
@@ -69,7 +69,7 @@ void prepareVariable()
 void* readerThread(void* args)
     {      
         (void)args;
-        int n=0;
+        uint16_t n=0;
     
         Reader* reader=readerCreate("/proc/stat");
         reader=readerOpenSourceFile(reader);
@@ -104,7 +104,7 @@ void* readerThread(void* args)
 void* analyzerThread(void* args)
     {       
         (void)args;
-        int m=0;
+        uint16_t m=0;
 
         ProcDate* procDate=analyzerCreate(coreSizeV);
         ProcDate* procDatePreviue=analyzerCreate(coreSizeV);
@@ -148,7 +148,7 @@ void* analyzerThread(void* args)
     
 
 
-            for(int i=0;i<=coreSizeV->coresNumber;i++)
+            for(uint8_t i=0;i<=coreSizeV->coresNumber;i++)
                 {
                     *procDatePreviue[i].name=*procDate[i].name;
                     procDatePreviue[i].user=procDate[i].user;
@@ -181,7 +181,7 @@ void* analyzerThread(void* args)
 void* printerThread(void* args)
     {   
         (void)args;
-        int k=0;
+        uint16_t k=0;
         
         StoragePrinter* storagePrinter=printerCreate(coreSizeV);
         

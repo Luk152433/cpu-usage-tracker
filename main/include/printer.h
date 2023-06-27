@@ -4,7 +4,7 @@
 typedef struct StoragePrinter
 {
     double* allRateValue;
-	int numberLevels;
+	uint8_t numberLevels;
     
 }StoragePrinter;
 

@@ -4,7 +4,7 @@
 ProcDate* analyzerCreate(coreSize*const coresize){
  
     ProcDate*const procDate=(ProcDate*const)malloc(sizeof(*procDate)*(coresize->coresNumber+1));
-    for(int i=0;i<=coresize->coresNumber;i++){
+    for(uint8_t i=0;i<=coresize->coresNumber;i++){
     *procDate[i].name=1;
     procDate[i].user=1;
     procDate[i].nice=1;
@@ -26,7 +26,7 @@ double* analyzerCountRate(ProcDate*const procDate,ProcDate*const procDatePreviue
 
     double*const allPercentValue=(double*const)malloc(sizeof(double)*(coresize->coresNumber+1));
       
-    for(int i=0;i<=coresize->coresNumber;i++)
+    for(uint8_t i=0;i<=coresize->coresNumber;i++)
     {
         long PrevIdle = procDatePreviue[i].idle + procDatePreviue[i].iowait;
         long Idle = procDate[i].idle +  procDate[i].iowait;
