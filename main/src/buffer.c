@@ -29,7 +29,6 @@ bool bufferCheckEmptyBuf(const BufferCircularBuf*const bufferCircularBuf)
 {
     if(bufferCircularBuf->courentFillBuffer==bufferCircularBuf->maxSize)
     {
-        printf("Buffer is full!");
         return 0;
     }
     return 1;
@@ -39,7 +38,6 @@ bool bufferCheckFillBuf(const BufferCircularBuf*const bufferCircularBuf)
 {
     if(bufferCircularBuf->courentFillBuffer==0)
     {
-        printf("Buffer is empty!");
         return 0;
     }
     return 1;
